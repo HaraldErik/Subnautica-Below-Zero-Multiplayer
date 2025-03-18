@@ -21,42 +21,35 @@ namespace Subnautica.Client.Modules
     public class MultiplayerMainMenu
     {
         /**
-         *
-         * Sahne yüklendiğinde tetiklenir.
-         *
-         * @author Ismail <ismaiil_0234@hotmail.com>
-         *
-         */
-        public static void OnSceneLoaded(SceneLoadedEventArgs ev)
-        {
-            IsClicked = false;
+ *
+ * Triggered when the scene is loaded.
+ * Patched by HaraldErik on github
+ * @author Ismail <ismaiil_0234@hotmail.com>
+ *
+ */
+public static void OnSceneLoaded(SceneLoadedEventArgs ev)
+{
+    IsClicked = false;
 
-            if (ev.Scene.name == "XMenu")
-            {
-                if (Settings.IsBepinexInstalled)
-                {
-                    CoroutineHost.StartCoroutine(SendAutoBepinexWarn());
-                }
-                else
-                {
-                    InitializeMultiplayerMenu();
-                }
-            }
-        }
+    if (ev.Scene.name == "XMenu")
+    {
+        // Directly initialize multiplayer menu, no need to check for BepInEx
+        InitializeMultiplayerMenu();
+    }
+}
 
-        /**
-         *
-         * Bepinex uyarı mesajını gösterir.
-         *
-         * @author Ismail <ismaiil_0234@hotmail.com>
-         *
-         */
-        public static IEnumerator SendAutoBepinexWarn()
-        {
-            yield return new WaitForSecondsRealtime(2f);
-
-            uGUI.main.confirmation.Show(ZeroLanguage.Get("GAME_BEPINEX_DETECTED"), null, null);
-        }
+/**
+ *
+ *  Normaly shows the BepInEx warning message.
+ *  Patched by HaraldErik on github
+ * @author Ismail <ismaiil_0234@hotmail.com>
+ *
+ */
+public static IEnumerator SendAutoBepinexWarn()
+{
+    // skip the warning
+    yield return null; // Simply dont show the warning
+}
 
         /**
          *

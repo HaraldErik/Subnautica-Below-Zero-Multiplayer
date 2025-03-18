@@ -576,49 +576,14 @@
         /**
          *
          * Bepinex kontrolü yapar.
-         *
+         * Patched by HaraldErik on github
          * @author Ismail <ismaiil_0234@hotmail.com>
          *
          */
-        public static bool IsBepinexInstalled()
-        {
-            string gamePath = null;
-
-            foreach (var item in AppDomain.CurrentDomain.GetAssemblies())
-            {
-                if (item.Location.Contains("Managed\\Assembly-CSharp.dll"))
-                {
-                    gamePath = item.Location.Replace("SubnauticaZero_Data\\Managed\\Assembly-CSharp.dll", "");
-                    break;
-                }
-            }
-
-            if (gamePath.IsNull())
-            {
-                Log.Error("IsBepinexInstalled: Null Problem");
-                return true;
-            }
-            else
-            {
-                if (File.Exists(string.Format("{0}doorstop_config.ini", gamePath)))
-                {
-                    return true;
-                }
-
-                if (File.Exists(string.Format("{0}winhttp.dll", gamePath)))
-                {
-                    return true;
-                }
-
-                if (Directory.Exists(string.Format("{0}BepInEx", gamePath)))
-                {
-                    return true;
-                }
-            }
-
-            return false;
-        }
-
+       public static bool IsBepinexInstalled()
+{
+    return false; // Always false so Bepinex is not detected
+}
         /**
          *
          * Mevcut zamanı döner.
