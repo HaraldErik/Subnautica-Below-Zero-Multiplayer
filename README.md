@@ -1,6 +1,13 @@
-# Subnautica Below Zero Multiplayer
+# BepinEx Patch/fix
 
-An multiplayer modification for the game Subnautica BZ.
+A modification  for the Subnautica Below Zero Multiplayer that Disable the detection for BepinEx.
+This allows you to use other mods such as the Map mod.
+
+But as for 18 march 2025 its work in progres.
+
+[Map mod](https://www.nexusmods.com/subnauticabelowzero/mods/15)
+
+# An multiplayer modification for the game Subnautica BZ.
 
 [![Discord](https://img.shields.io/discord/994133148046725160?logo=discord&logoColor=white)](https://discord.gg/Gq9nush6SP)
 [![Crowdin](https://badges.crowdin.net/subnautica-bz-multiplayer-mod/localized.svg)](https://crowdin.com/project/subnautica-bz-multiplayer-mod)
